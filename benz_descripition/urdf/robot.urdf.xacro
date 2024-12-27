@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="benz_robot">
+  <!-- 执行器部分 -->
+  <xacro:include filename="$(find benz_descripition)/urdf/base.urdf.xacro" />
+  <xacro:include filename="$(find benz_descripition)/urdf/wheels.urdf.xacro" />
+  <xacro:include filename="$(find benz_descripition)/urdf/lidar.urdf.xacro" />
+  <!-- 插件 -->
+  <xacro:include filename="$(find benz_descripition)/urdf/plugins/gazebo_control_plugin.xacro" />
+  <xacro:include filename="$(find benz_descripition)/urdf/plugins/gazebo_sensor_plugin.xacro" />
+  <xacro:gazebo_control_plugin />
+  <xacro:gazebo_sensor_plugin />
+
+</robot>

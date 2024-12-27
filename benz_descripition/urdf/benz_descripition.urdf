@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="benz_descripition">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0032491 5.2641E-08 0.029973"
+        rpy="0 0 0" />
+      <mass
+        value="0.89412" />
+      <inertia
+        ixx="0.0010308"
+        ixy="-3.263E-09"
+        ixz="6.9727E-05"
+        iyy="0.0018462"
+        iyz="-7.0323E-10"
+        izz="0.002319" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="f_left_wheel">
+    <inertial>
+      <origin
+        xyz="-6.1062E-16 3.0531E-15 -1.3281E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.011781" />
+      <inertia
+        ixx="1.3499E-06"
+        ixy="-3.988E-21"
+        ixz="-2.5173E-35"
+        iyy="2.5035E-06"
+        iyz="8.04E-21"
+        izz="1.3499E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/f_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/f_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.035 0.055 0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="f_left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="f_right_wheel">
+    <inertial>
+      <origin
+        xyz="-4.1356E-15 -4.1633E-16 1.4065E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.011781" />
+      <inertia
+        ixx="1.3499E-06"
+        ixy="-3.9878E-21"
+        ixz="1.3524E-23"
+        iyy="2.5035E-06"
+        iyz="4.0582E-21"
+        izz="1.3499E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/f_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/f_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="f_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.0350000000000043 -0.0549999999999995 0.00999999999998574"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="f_right_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="a_left_wheel">
+    <inertial>
+      <origin
+        xyz="4.7184E-16 -3.0809E-15 1.496E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.011781" />
+      <inertia
+        ixx="1.3499E-06"
+        ixy="-4.0289E-21"
+        ixz="-3.001E-38"
+        iyy="2.5035E-06"
+        iyz="-2.2959E-39"
+        izz="1.3499E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/a_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/a_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.035 0.055 0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="a_left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="a_right_wheel">
+    <inertial>
+      <origin
+        xyz="4.5797E-16 -3.0809E-15 6.4115E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.011781" />
+      <inertia
+        ixx="1.3499E-06"
+        ixy="-4.0289E-21"
+        ixz="-3.001E-38"
+        iyy="2.5035E-06"
+        iyz="-1.7647E-23"
+        izz="1.3499E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/a_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/a_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="a_right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.035 -0.055 0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="a_right_wheel" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="lidar">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/lidar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find benz_descripition)/meshes/lidar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.033651847811622 0 0.0805499999999635"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Macro definition for a wheel -->
+  <xacro:macro name="wheel" params="name origin joint_type joint_axis">
+    <!-- Extract xyz and rpy from origin string -->
+    <xacro:property name="origin_xyz" value="${origin.split(' ')}" />
+
+    <!-- Extract joint axis from joint_axis string -->
+    <xacro:property name="joint_axis_values" value="${joint_axis.split(' ')}" />
+    <!-- 修改颜色 -->
+    <gazebo reference="${name}">
+      <material>Gazebo/Black</material>
+    </gazebo>
+
+    <!-- Link definition for the wheel -->
+    <link name="${name}">
+      <inertial>
+        <mass value="0.011781" />
+        <inertia ixx="1.3499E-06" ixy="-3.988E-21" ixz="-2.5173E-35" iyy="2.5035E-06" iyz="8.04E-21" izz="1.3499E-06" />
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="file://$(find benz_descripition)/meshes/${name}.STL" />
+        </geometry>
+        <material name="black">
+          <color rgba="1 1 1 1" />
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="file://$(find benz_descripition)/meshes/${name}.STL" />
+        </geometry>
+      </collision>
+    </link>
+
+    <!-- Joint definition for the wheel -->
+    <joint name="${name}_joint" type="${joint_type}">
+      <origin xyz="${origin_xyz[0]} ${origin_xyz[1]} ${origin_xyz[2]}" rpy="0 0 0" />
+      <parent link="base_link" />
+      <child link="${name}" />
+      <axis xyz="${joint_axis_values[0]} ${joint_axis_values[1]} ${joint_axis_values[2]}" />
+    </joint>
+
+    <!-- 修改摩擦力 -->
+    <gazebo reference="${name}">
+      <mu1 value="20.0"/>
+      <mu2 value="20.0"/>
+      <kp value="1000000000.0"/>
+      <kd value="1.0"/>
+    </gazebo>
+  </xacro:macro>
+  
+  <xacro:wheel name="f_left_wheel" origin="0.035 0.055 0.01" joint_type="continuous" joint_axis="0 1 0" />
+  <xacro:wheel name="f_right_wheel" origin="0.035 -0.055 0.01" joint_type="continuous" joint_axis="0 -1 0" />
+  <xacro:wheel name="a_left_wheel" origin="-0.035 0.055 0.01" joint_type="continuous" joint_axis="0 1 0" />
+  <xacro:wheel name="a_right_wheel" origin="-0.035 -0.055 0.01" joint_type="continuous" joint_axis="0 -1 0" />
+</robot>
