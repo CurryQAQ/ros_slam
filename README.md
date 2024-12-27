@@ -1,5 +1,5 @@
-## 地面无人机动平台大作业
-# 通过gazebo和rviz以及slam功能包完成
+# 地面无人机动平台大作业
+## 通过gazebo和rviz以及slam功能包完成
 操作流程
 1、启动gazebo-------ros2 launch benz_descripition gazebo_sim.launch.py
 2、启动SLAM功能包--------ros2 launch slam_toolbox online_async_launch.py use_sim_time:=True
